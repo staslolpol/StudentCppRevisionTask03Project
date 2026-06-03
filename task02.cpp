@@ -48,17 +48,14 @@
 */
 
 string task02(int a, int b, int n) {
-	if (a <= 0 || b <= 0 || n <= 0) {
-		return "error";
+    if (a < 0 || b < 0 || n <= 0 || (a == 0 && b == 0)) {
+        return "error";
+    }
 
-	}
+    int total_kopecks = (a * 100 + b) * n;
 
-	int all_lolipop = (a * 100 + b) * n;
+    int rub = total_kopecks / 100;
+    int kop = total_kopecks % 100;
 
-	int rub = all_lolipop / 100;
-	int kop = all_lolipop % 100;
-
-
-
-	return to_string(rub) + " " + to_string(kop);
+    return to_string(rub) + " " + to_string(kop);
 }

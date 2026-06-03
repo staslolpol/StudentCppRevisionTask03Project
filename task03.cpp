@@ -31,5 +31,12 @@
 */
 
 bool task03(int width, int length, int a, int b) {
-	return false;
+	if (width <= 0 || length <= 0 || a <= 0 || b <= 0) {
+		return false;
+	}
+
+	bool directly = (width <= a && length <= b);
+	bool rotated = (width <= b && length <= a);
+
+	return directly || rotated;
 }
